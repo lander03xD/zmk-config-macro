@@ -15,7 +15,7 @@
 
         base_layer {
             bindings = <
-                &kp Q           &kp W   &kp E 
+                &bt BT_CLR          &kp W   &kp E 
                 &kp Q             &kp E 
                 &kp Q           &kp W   &kp E 
                 &kp Q           &kp W   &kp E 
