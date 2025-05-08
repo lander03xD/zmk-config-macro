@@ -1,0 +1,26 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/mouse.h>
+
+#define BASE 0
+
+&mt {
+    tapping-term-ms = <300>;
+};
+
+/ {  
+    keymap {
+        compatible = "zmk,keymap";
+
+        base_layer {
+            bindings = <
+                &kp Q           &kp W   &kp E 
+                &kp Q             &kp E 
+                &kp Q           &kp W   &kp E 
+                &kp Q           &kp W   &kp E 
+            >;
+        }; 
+
+    };
+};
