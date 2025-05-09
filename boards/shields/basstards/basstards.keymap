@@ -4,10 +4,8 @@
 #include <dt-bindings/zmk/mouse.h>
 
 #define BASE 0
-
-&mt {
-    tapping-term-ms = <300>;
-};
+#define EXTRA 1
+#define CONFIG 2
 
 / {  
     keymap {
@@ -15,10 +13,28 @@
 
         base_layer {
             bindings = <
-                &bt BT_CLR          &kp W   &kp E 
-                &kp Q             &kp E 
-                &kp Q           &kp W   &kp E 
-                &kp Q           &kp W   &kp E 
+                &kp LC(LA(LS(F1)))  &kp C_MUTE           &kp C_VOL_UP 
+                &mo EXTRA                                &kp C_VOL_DN 
+                &kp LC(LA(LS(F2)))  &kp LC(LA(LS(F3)))   &kp LC(LA(LS(F4))) 
+                &kp LC(LA(LS(F5)))  &kp LC(LA(LS(F6)))   &kp LC(LA(LS(F7))) 
+            >;
+        }; 
+        
+        extra_layer {
+            bindings = <
+                &trans               &to CONFIG           &trans
+                &trans                                    &trans 
+                &kp LC(LA(LS(F8)))   &kp LC(LA(LS(F9)))   &kp LC(LA(LS(F10))) 
+                &kp LC(LA(LS(F11)))  &kp LC(LA(LS(F12)))  &kp LC(LA(LS(F13))) 
+            >;
+        }; 
+        
+        config_layer {
+            bindings = <
+                &trans              &none                &none
+                &none                                    &none 
+                &none               &none                &none 
+                &none               &none                &bt BT_CLR
             >;
         }; 
 
