@@ -10,9 +10,9 @@
         base_layer {
             bindings = <
                 &kp LC(LA(LS(F1)))  &kp C_MUTE           &kp C_VOL_UP 
-                &kp A                                    &kp C_VOL_DN 
-                &mo 1  &kp LC(LA(LS(F3)))   &kp LC(LA(LS(F4))) 
-                &to 1  &kp LC(LA(LS(F6)))   &kp LC(LA(LS(F7))) 
+                &mo 1                                    &kp C_VOL_DN 
+                &kp LC(LA(LS(F2)))  &kp LC(LA(LS(F3)))   &kp LC(LA(LS(F4))) 
+                &kp LC(LA(LS(F5)))  &kp LC(LA(LS(F6)))   &kp LC(LA(LS(F7))) 
             >;
         }; 
         
@@ -27,10 +27,10 @@
         
         config_layer {
             bindings = <
-                &trans              &none                &none
-                &none                                    &none 
-                &none               &none                &none 
-                &none               &none                &bt BT_CLR
+                &trans              &to 0                &to 0
+                &to 0                                    &to 0
+                &to 0               &to 0                &to 0 
+                &to 0               &to 0                &bt BT_CLR
             >;
         }; 
 
