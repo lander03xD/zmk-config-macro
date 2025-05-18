@@ -1,15 +1,10 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
-/ {
-    chosen {
-        zmk,kscan = &default_kscan;
-        zmk,matrix_transform = &default_transform;
-    };
-    
+/ {    
     left_encoder: encoder_left {
-    	compatible = "alps,ec11";
-    	a-gpios = <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    	b-gpios = <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    	co	mpatible = "alps,ec11";
+    	a-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    	b-gpios = <&pro_micro 19 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     	steps = <20>;
     	status = "okay";
     };
@@ -21,30 +16,16 @@
     };
 
     default_kscan: kscan {
-        compatible = "zmk,kscan-gpio-matrix";
-        label = "default_kscan";
-        diode-direction = "col2row";
+        compatible = "zmk,direct-wired-keys";
 
-        row-gpios = <&xiao_d 0 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                    <&xiao_d 1 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                    <&xiao_d 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                    <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
-    
-        col-gpios = <&xiao_d 4 GPIO_ACTIVE_HIGH>,
-                    <&xiao_d 5 GPIO_ACTIVE_HIGH>,
-                    <&xiao_d 6 GPIO_ACTIVE_HIGH>;
-    };
-
-    default_transform: matrix_transform {
-        compatible = "zmk,matrix-transform";
-        rows = <4>;
-        columns = <3>;
-
-        map = <
-                    RC(0,1) RC(0,2)
-                            RC(1,2)
-            RC(2,0) RC(2,1) RC(2,2)
-            RC(3,0) RC(3,1) RC(3,2) 
-        >;
+        row-gpios = <&pro_micro 9 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&pro_micro 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&pro_micro 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
     };
 };
