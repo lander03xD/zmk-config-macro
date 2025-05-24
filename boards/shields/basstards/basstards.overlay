@@ -18,6 +18,7 @@
     	compatible = "zmk,keymaps-sensors";
     	sensors = <&left_encoder>;
     	triggers_per_rotation= <20>;
+    	status = "okay";
     };
     
 };
