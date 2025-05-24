@@ -1,3 +1,5 @@
+#include <physical_layouts.dtsi>
+
 / {    
     left_encoder: encoder_left {
     	compatible = "alps,ec11";
@@ -7,12 +9,20 @@
     	status = "okay";
     };
     
+};
+
+
+/ {
     sensors: sensors {
     	compatible = "zmk,keymaps-sensors";
     	sensors = <&left_encoder>;
     	triggers_per_rotation= <20>;
     };
+    
+};
 
+
+/ {
     default_kscan: kscan {
         compatible = "zmk,kscan-gpio-direct";
         wakeup-source;
@@ -25,5 +35,33 @@
                     <&pro_micro 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
                     <&pro_micro 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
                     <&pro_micro 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+    };
+};
+
+
+/ {
+    default_transform: keymap_transform0 {
+        compatible = "zmk,matrix-transform";
+        columns = <1>;
+        rows = <9>;
+        map = <
+            RC(0,0) RC(0,1) RC(0,2) RC(0,3) RC(0,4) RC(0,5) RC(0,6) RC(0,7) RC(0,8)
+    };
+};
+
+/ {
+    physical_layout0: physical_layout_0 { 
+    // First physical layout, use different naming for other layouts
+        compatible = "zmk,physical-layout";
+        display-name = "basstards";
+        kscan = <&default_kscan>; // Label of the kscan node, optional if all layouts use the same
+        transform = <&default_transform>; // Label of the matrix transform for this layout
+    };
+};
+
+/ {
+    chosen {
+        zmk,physical-layout = &physical_layout0;
+        // Other chosen items
     };
 };
