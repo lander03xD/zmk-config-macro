@@ -40,7 +40,7 @@
                 &trans              &to 0               
                 &to 0                                
                 &to 0               &to 0                &to 0 
-                &to 0               &to 0                &bt BT_CLR
+                &kp C_RESET               &to 0                &bt BT_CLR
             >;
         }; 
 
