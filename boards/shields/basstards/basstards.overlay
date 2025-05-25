@@ -47,6 +47,7 @@
     
     chosen {
         zmk,physical-layout = &physical_layout0;
+        zmk,keymap-sensors = &sensors
         // Other chosen items
     };
 };
