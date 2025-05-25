@@ -4,10 +4,18 @@
 #include <dt-bindings/zmk/mouse.h>
 
 / {  
+    behaviors {
+        rot_kp: sensor_rotate_kp {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+        };
+    };
+    
     keymap {
         compatible = "zmk,keymap";
        
-       	sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+       	sensor-bindings = <&rot_kp C_VOL_UP C_VOL_DN>;
         
         base_layer {
             bindings = <
