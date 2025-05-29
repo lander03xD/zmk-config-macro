@@ -6,10 +6,9 @@
 / {    
     keymap {
         compatible = "zmk,keymap";
-       
-       	sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
-        
+            
         base_layer {
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             bindings = <
                 &kp LC(LA(LS(F1)))  &kp C_MUTE           
                 &mo 1                                 
@@ -19,6 +18,7 @@
         }; 
         
         extra_layer {
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             bindings = <
                 &trans               &to 2            
                 &trans                                   
@@ -28,6 +28,7 @@
         }; 
         
         config_layer {
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             bindings = <
                 &trans              &to 0               
                 &to 0                                
