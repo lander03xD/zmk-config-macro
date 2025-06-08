@@ -20,8 +20,8 @@
         base_layer {
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             bindings = <
-                &mo 1                                    &kp C_MUTE           
-                &mo 2                                 
+                &mo 2                                    &kp C_MUTE           
+                &mo 1                                 
                 &kp LC(LA(LS(F1)))  &kp LC(LA(LS(F2)))   &kp LC(LA(LS(F3))) 
                 &kp LC(LA(LS(F4)))  &kp LC(LA(LS(F5)))   &kp LC(LA(LS(F6))) 
             >;
@@ -60,7 +60,7 @@
         config_layer_4 {
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
             bindings = <
-                &none          &to 0               
+                &none                     &none               
                 &none                                  
                 &to 0          &to 0      &to 0 
                 &bootloader    &to 0      &bt BT_CLR
