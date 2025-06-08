@@ -10,7 +10,7 @@
         combo_activate_layer_3 {
             timeout-ms = <50>;
             key-positions = <0 2>;
-            bindings = <&mo 3>
+            bindings = <&mo 3>;
         }
     }
     
