@@ -1,5 +1,7 @@
 #include <dt-bindings/zmk/matrix_transform.h> // Put this with the other includes at the top of your
 #include <physical_layouts.dtsi>
+#include <input/processors.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 / {  
     default_kscan: kscan {
