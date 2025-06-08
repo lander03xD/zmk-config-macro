@@ -1,4 +1,4 @@
-if SHIELD_BASSTARDS
+if SHIELD_MACR03XD
 
 config ZMK_KEYBOARD_NAME 
     default "macr03xD"
