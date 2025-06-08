@@ -12,7 +12,7 @@
             key-positions = <0 2>;
             bindings = <&mo 3>;
         }
-    }
+    };
     
     keymap {
         compatible = "zmk,keymap";
