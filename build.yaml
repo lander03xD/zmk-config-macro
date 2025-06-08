@@ -21,3 +21,5 @@
 include:
   - board: nice_nano_v2
     shield: basstards
+  - board: nice_nano_v2
+    shield: macr03xD

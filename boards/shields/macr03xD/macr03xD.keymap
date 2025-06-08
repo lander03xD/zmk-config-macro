@@ -1,0 +1,71 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/mouse.h>
+
+/ {    
+    combos {
+        compatible = "zmk,combos";
+        
+        combo_activate_layer_3 {
+            timeout-ms = <50>;
+            key-positions = <0 2>;
+            bindings = <&mo 3>
+        }
+    }
+    
+    keymap {
+        compatible = "zmk,keymap";
+            
+        base_layer {
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            bindings = <
+                &mo 1                                    &kp C_MUTE           
+                &mo 2                                 
+                &kp LC(LA(LS(F1)))  &kp LC(LA(LS(F2)))   &kp LC(LA(LS(F3))) 
+                &kp LC(LA(LS(F4)))  &kp LC(LA(LS(F5)))   &kp LC(LA(LS(F6))) 
+            >;
+        }; 
+        
+        macro_layer_1 {
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            bindings = <
+                &none                                     &kp C_MUTE       
+                &none                                   
+                &kp LC(LA(LS(F7)))   &kp LC(LA(LS(F8)))   &kp LC(LA(LS(F9))) 
+                &kp LC(LA(LS(F10)))  &kp LC(LA(LS(F11)))  &kp LC(LA(LS(F12))) 
+            >;
+        }; 
+        
+        macro_layer_2 {
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            bindings = <
+                &none                                     &kp C_MUTE            
+                &none                                    
+                &kp LC(LA(LS(N1)))   &kp LC(LA(LS(N2)))   &kp LC(LA(LS(N3))) 
+                &kp LC(LA(LS(N4)))   &kp LC(LA(LS(N5)))   &kp LC(LA(LS(N6))) 
+            >;
+        }; 
+        
+        macro_layer_3 {
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            bindings = <
+                &none                                     &to 4            
+                &none                                    
+                &kp LC(LA(LS(A)))    &kp LC(LA(LS(B)))    &kp LC(LA(LS(C))) 
+                &kp LC(LA(LS(D)))    &kp LC(LA(LS(E)))    &kp LC(LA(LS(F))) 
+            >;
+        }; 
+        
+        config_layer_4 {
+            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
+            bindings = <
+                &none          &to 0               
+                &none                                  
+                &to 0          &to 0      &to 0 
+                &bootloader    &to 0      &bt BT_CLR
+            >;
+        }; 
+
+    };
+};
