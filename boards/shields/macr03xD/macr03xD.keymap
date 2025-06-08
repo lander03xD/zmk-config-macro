@@ -67,8 +67,8 @@
             bindings = <
                 &none                     &none               
                 &none                                  
-                &to 0          &to 0      &to 0 
-                &bootloader    &to 0      &bt BT_CLR
+                &to 0          &to 0               &to 0 
+                &bootloader    &studio_unlock      &bt BT_CLR
             >;
         }; 
         
