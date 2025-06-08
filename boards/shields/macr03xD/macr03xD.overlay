@@ -1,21 +1,7 @@
 #include <dt-bindings/zmk/matrix_transform.h> // Put this with the other includes at the top of your
 #include <physical_layouts.dtsi>
 
-/ {    
-    left_encoder: encoder_left {
-    	compatible = "alps,ec11";
-    	a-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    	b-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    	steps = <20>;
-    	status = "okay";
-    };
-    
-    sensors: sensors {
-    	compatible = "zmk,keymap-sensors";
-    	sensors = <&left_encoder>;
-    	triggers-per-rotation = <20>;
-    };
-    
+/ {  
     default_kscan: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         label = "default_kscan";
@@ -55,6 +41,21 @@
         zmk,physical-layout = &physical_layout0;
         // Other chosen items
     };
+      
+    left_encoder: encoder_left {
+    	compatible = "alps,ec11";
+    	a-gpios = <&xiao_d 8 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    	b-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    	steps = <20>;
+    	status = "okay";
+    };
+    
+    sensors: sensors {
+    	compatible = "zmk,keymap-sensors";
+    	sensors = <&left_encoder>;
+    	triggers-per-rotation = <20>;
+    };
+    
 };
 
 
