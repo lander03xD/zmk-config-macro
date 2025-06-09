@@ -25,3 +25,7 @@ include:
     shield: macr03xD
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
+  - board: nice_nano_v2
+    shield: settings_reset
+  - board: seeeduino_xiao_ble
+    shield: settings_reset
