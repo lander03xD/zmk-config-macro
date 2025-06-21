@@ -9,4 +9,4 @@ The case and plate are modelled with [FreeCAD](https://www.freecad.org/).
 
 ![MacroPad](./github-images/macropad.jpg)
 ![handwired](./github-images/handwired.jpg)
-![Freecad](./github-images/freecad.jpg)
+![Freecad](./github-images/freecad.png)
