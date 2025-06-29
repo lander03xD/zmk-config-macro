@@ -1,0 +1,2 @@
+config SHIELD_MACR03XDPCB
+    def_bool $(shields_list_contains,macr03xDpcb)

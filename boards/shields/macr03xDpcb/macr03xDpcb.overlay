@@ -1,0 +1,82 @@
+#include <dt-bindings/zmk/matrix_transform.h> // Put this with the other includes at the top of your
+#include <physical_layouts.dtsi>
+
+
+/ {  
+    default_kscan: kscan {
+        compatible = "zmk,kscan-gpio-matrix";
+        label = "default_kscan";
+        diode-direction = "col2row";
+
+        row-gpios = <&promicro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&promicro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&promicro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&promicro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+
+        col-gpios = <&promicro 7 GPIO_ACTIVE_HIGH>,
+                    <&promicro 8 GPIO_ACTIVE_HIGH>,
+                    <&promicro 9 GPIO_ACTIVE_HIGH>;
+    };
+    
+    default_transform: matrix_transform {
+        compatible = "zmk,matrix-transform";
+        rows = <4>;
+        columns = <3>;
+
+        map = <
+            RC(0,0)         RC(0,1) 
+            RC(1,0)         
+            RC(2,0) RC(2,1) RC(2,2)
+            RC(3,0) RC(3,1) RC(3,2) 
+        >;
+    };
+    
+    physical_layout0: physical_layout_0 { 
+        compatible = "zmk,physical-layout";
+        display-name = "macr03xD";
+        kscan = <&default_kscan>; // Label of the kscan node, optional if all layouts use the same
+        transform = <&default_transform>; // Label of the matrix transform for this layout
+    };
+    
+    chosen {
+        zmk,physical-layout = &physical_layout0;
+        // Other chosen items
+    };
+      
+    left_encoder: encoder_left {
+    	compatible = "alps,ec11";
+    	a-gpios = <&promicro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    	b-gpios = <&promicro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    	steps = <20>;
+    	status = "okay";
+    };
+    
+    sensors: sensors {
+    	compatible = "zmk,keymap-sensors";
+    	sensors = <&left_encoder>;
+    	triggers-per-rotation = <5>;
+    };
+    
+};
+
+
+/ {
+    physical_layout0: physical_layout_0 { // First physical layout, use different naming for other layouts
+        compatible = "zmk,physical-layout";
+        display-name = "Default Layout";
+        kscan = <&default_kscan>; // Label of the kscan node, optional if all layouts use the same
+        transform = <&default_transform>; // Label of the matrix transform for this layout
+        keys  //                     w   h     x    y     rot    rx    ry
+            = <&key_physical_attrs 100 100     0   0       0     0     0> // Row 1
+            , <&key_physical_attrs 100 100   200   0       0     0     0>
+            , <&key_physical_attrs 100 100     0 100       0     0     0> // Row 2
+            , <&key_physical_attrs 100 100     0 200       0     0     0> // Row 3
+            , <&key_physical_attrs 100 100   100 200       0     0     0>
+            , <&key_physical_attrs 100 100   200 200       0     0     0>
+            , <&key_physical_attrs 100 100     0 300       0     0     0> // Row 4
+            , <&key_physical_attrs 100 100   100 300       0     0     0>
+            , <&key_physical_attrs 100 100   200 300       0     0     0>
+            ;
+    };
+};
+

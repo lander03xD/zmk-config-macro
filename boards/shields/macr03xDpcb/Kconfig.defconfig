@@ -1,0 +1,6 @@
+if SHIELD_MACR03XDPCB
+
+config ZMK_KEYBOARD_NAME 
+    default "macr03xD_pcb"
+
+endif
