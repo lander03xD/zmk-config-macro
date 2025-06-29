@@ -8,14 +8,14 @@
         label = "default_kscan";
         diode-direction = "col2row";
 
-        row-gpios = <&promicro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                    <&promicro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                    <&promicro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
-                    <&promicro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+        row-gpios = <&pro_micro 15 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&pro_micro 14 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&pro_micro 16 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
+                    <&pro_micro 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
 
-        col-gpios = <&promicro 7 GPIO_ACTIVE_HIGH>,
-                    <&promicro 8 GPIO_ACTIVE_HIGH>,
-                    <&promicro 9 GPIO_ACTIVE_HIGH>;
+        col-gpios = <&pro_micro 7 GPIO_ACTIVE_HIGH>,
+                    <&pro_micro 8 GPIO_ACTIVE_HIGH>,
+                    <&pro_micro 9 GPIO_ACTIVE_HIGH>;
     };
     
     default_transform: matrix_transform {
@@ -45,8 +45,8 @@
       
     left_encoder: encoder_left {
     	compatible = "alps,ec11";
-    	a-gpios = <&promicro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-    	b-gpios = <&promicro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    	a-gpios = <&pro_micro 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    	b-gpios = <&pro_micro 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     	steps = <20>;
     	status = "okay";
     };
